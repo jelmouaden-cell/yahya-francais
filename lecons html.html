@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Aventure de Yahya - Leçons</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">🚀 L'Aventure de Yahya</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="lecons.html" class="active">Leçons</a>
+                <a href="jeux.html">Jeux</a>
+                <a href="certificat.html">Certificat</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container lessons-layout">
+        <aside class="sidebar" id="lessons-sidebar">
+            </aside>
+
+        <section class="lesson-main">
+            <div id="lesson-content-area" class="lesson-card">
+                <h2>Sélectionne une leçon pour commencer ton parcours !</h2>
+                <p>Progresse semaine par semaine pour tout valider.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Plateforme d'été personnalisée pour Yahya Armich.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Data intégrale des 20 leçons
+        const dbLecons = [
+            // SEMAINE 1
+            { id: 1, semaine: 1, titre: "Alphabet français", objectif: "Maîtriser les 26 lettres de l'alphabet.", explication: "L'alphabet français se compose de 26 lettres : 6 voyelles (A, E, I, O, U, Y) et 20 consonnes.", vocabulaire: ["A - Avion", "B - Ballon", "C - Chat", "D - Dauphin"], exemples: "Exemple: Le chat dort sur le lit.", quiz: { q: "Combien y a-t-il de voyelles ?", options: ["5", "6", "7"], r: 1 } },
+            { id: 2, semaine: 1, titre: "Prononciation", objectif: "Apprendre les sons de base ch, ou, au.", explication: "Le son 'ch' fait comme dans chat. Le son 'ou' fait comme dans loup. Le son 'au' se prononce 'o'.", vocabulaire: ["Chocolat", "Château", "Mouton", "Chapeau"], exemples: "Exemple: Yahya mange du chocolat.", quiz: { q: "Comment se prononce le mot 'eau' ?", options: ["Un son court 'a'", "Le son 'o'", "Le son 'ou'"], r: 1 } },
+            { id: 3, semaine: 1, titre: "Salutations", objectif: "Savoir saluer poliment.", explication: "On dit 'Bonjour' le matin et la journée, et 'Bonsoir' le soir. Pour quitter quelqu'un, on dit 'Au revoir'.", vocabulaire: ["Bonjour", "Bonsoir", "Salut", "Au revoir"], exemples: "Exemple: Bonjour Monsieur le Directeur !", quiz: { q: "Que dit-on au moment de quitter un ami ?", options: ["Bonjour", "Merci", "Au revoir"], r: 2 } },
+            { id: 4, semaine: 1, titre: "Se présenter", objectif: "Dire son nom, son âge et sa nationalité.", explication: "Pour donner son nom, on utilise : 'Je m'appelle...'. Pour donner son âge : 'J'ai ... ans'.", vocabulaire: ["Je m'appelle", "J'ai", "Je suis marocain", "Habiter"], exemples: "Exemple: Je m'appelle Yahya Armich et j'ai 11 ans.", quiz: { q: "Quelle phrase est correcte ?", options: ["Je suis 11 ans", "J'ai 11 ans", "Je m'appelle 11 ans"], r: 1 } },
+            { id: 5, semaine: 1, titre: "Nombres 1 à 20", objectif: "Compter sans fautes jusqu'à 20.", explication: "Voici les nombres essentiels : un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf, vingt.", vocabulaire: ["Un (1)", "Dix (10)", "Quinze (15)", "Vingt (20)"], exemples: "Exemple: J'ai commandé cinq livres.", quiz: { q: "Comment écrit-on le chiffre 14 ?", options: ["Quatorze", "Katorde", "Quatorz"], r: 0 } },
+            // SEMAINE 2
+            { id: 6, semaine: 2, titre: "La famille", objectif: "Nommer les membres de la famille proche.", explication: "La famille se compose du père, de la mère, du frère, de la sœur, des grands-parents.", vocabulaire: ["Le père", "La mère", "Le frère", "La sœur"], exemples: "Exemple: Ma mère prépare un délicieux tajine.", quiz: { q: "Le frère de mon père est mon :", options: ["Grand-père", "Oncle", "Cousin"], r: 1 } },
+            { id: 7, semaine: 2, titre: "L'école", objectif: "Connaître le lexique de la classe.", explication: "Dans ton cartable, tu as des outils : un cahier, un stylo, une règle, une trousse et une gomme.", vocabulaire: ["Un stylo", "Un livre", "Le tableau", "Le maître"], exemples: "Exemple: Le maître écrit la règle au tableau.", quiz: { q: "Où range-t-on les stylos ?", options: ["Dans la poche", "Dans la trousse", "Dans le cahier"], r: 1 } },
+            { id: 8, semaine: 2, titre: "Les couleurs", objectif: "Identifier et accorder les couleurs de base.", explication: "Les couleurs principales sont : rouge, bleu, vert, jaune, noir, blanc, orange, violet.", vocabulaire: ["Rouge", "Bleu", "Jaune", "Vert"], exemples: "Exemple: Le ciel est bleu et l'herbe est verte.", quiz: { q: "Quelle couleur obtient-on en mélangeant le bleu et le jaune ?", options: ["Le rouge", "Le vert", "Le noir"], r: 1 } },
+            { id: 9, semaine: 2, titre: "Les jours de la semaine", objectif: "Connaître l'ordre exact des 7 jours.", explication: "Une semaine contient 7 jours : Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche.", vocabulaire: ["Lundi", "Mercredi", "Vendredi", "Dimanche"], exemples: "Exemple: Le samedi et le dimanche, c'est le week-end !", quiz: { q: "Quel jour vient directement après le jeudi ?", options: ["Mercredi", "Vendredi", "Samedi"], r: 1 } },
+            { id: 10, semaine: 2, titre: "Révision", objectif: "Faire le point sur les acquis des deux premières semaines.", explication: "Bravo Yahya ! Tu as révisé l'alphabet, les présentations, la famille et les nombres.", vocabulaire: ["Récapituler", "S'entraîner", "Réussir"], exemples: "Exemple: Je révise mes leçons tous les soirs.", quiz: { q: "Trouve l'intrus (le mot qui n'a pas de rapport) :", options: ["Frère", "Cahier", "Mère"], r: 1 } },
+            // SEMAINE 3
+            { id: 11, semaine: 3, titre: "Je suis / Tu es", objectif: "Maîtriser le verbe être au présent.", explication: "Le verbe être exprime un état ou une identité. Je suis, Tu es, Il/Elle est, Nous sommes, Vous êtes, Ils/Elles sont.", vocabulaire: ["Je suis", "Tu es", "Il est", "Nous sommes"], exemples: "Exemple: Je suis très heureux d'apprendre le français.", quiz: { q: "Complète : 'Tu ____ un bon élève.'", options: ["suis", "es", "est"], r: 1 } },
+            { id: 12, semaine: 3, titre: "Les animaux", objectif: "Distinguer les animaux domestiques et sauvages.", explication: "Les animaux domestiques vivent près de l'homme (chien, chat, vache). Les animaux sauvages vivent en liberté (lion, éléphant).", vocabulaire: ["Le chien", "Le chat", "Le lion", "L'oiseau"], exemples: "Exemple: Le lion est le roi de la savane.", quiz: { q: "Lequel de ces animaux est sauvage ?", options: ["Le chat", "La vache", "L'éléphant"], r: 2 } },
+            { id: 13, semaine: 3, titre: "Les fruits", objectif: "Nommer les fruits courants.", explication: "Les fruits sont parfaits pour la santé : la pomme, la banane, l'orange, la fraise, le raisin.", vocabulaire: ["Une pomme", "Une banane", "Une orange", "La datte"], exemples: "Exemple: Yahya mange une orange juteuse.", quiz: { q: "Quel fruit est jaune et allongé ?", options: ["La fraise", "La banane", "La pomme"], r: 1 } },
+            { id: 14, semaine: 3, titre: "Questions simples", objectif: "Poser une question avec 'Où', 'Quand', 'Comment'.", explication: "On utilise 'Où' pour le lieu, 'Quand' pour le temps, et 'Comment' pour la manière.", vocabulaire: ["Où ?", "Quand ?", "Comment ?", "Pourquoi ?"], exemples: "Exemple: Où se trouve ton école ?", quiz: { q: "Quelle question pose-t-on pour connaître l'heure ?", options: ["Où vas-tu ?", "Quelle heure est-il ?", "Comment ça va ?"], r: 1 } },
+            { id: 15, semaine: 3, titre: "Révision", objectif: " Consolider le verbe être, le vocabulaire des animaux et des fruits.", explication: "Utilise le verbe être combiné avec les nouveaux mots de vocabulaire appris cette semaine.", vocabulaire: ["Solide", "Pratique", "Application"], exemples: "Exemple: Les dattes sont des fruits délicieux.", quiz: { q: "Complète : 'Nous ____ des enfants sages.'", options: ["êtes", "sommes", "sont"], r: 1 } },
+            // SEMAINE 4
+            { id: 16, semaine: 4, titre: "Lecture simple", objectif: "Lire de courtes phrases couramment.", explication: "Pour bien lire, associe les syllabes pas à pas. Prends ton temps sur la ponctuation.", vocabulaire: ["Lire", "Une phrase", "Un texte", "La fluidité"], exemples: "Exemple: Le petit oiseau chante sur la branche de l'arbre.", quiz: { q: "Trouve la bonne coupure en syllabes du mot 'chanteur' :", options: ["chan-teur", "cha-nteur", "chant-eur"], r: 0 } },
+            { id: 17, semaine: 4, titre: "Compréhension", objectif: "Comprendre le sens d'une histoire courte.", explication: "Lis le texte suivant : 'Yahya a un petit chat blanc. Le chat s'appelle Rigolo. Rigolo adore jouer avec une balle rouge.'", vocabulaire: ["Comprendre", "Le sens", "L'histoire"], exemples: "Exemple: Répondre à des questions sur le texte.", quiz: { q: "De quelle couleur est la balle de Rigolo ?", options: ["Blanche", "Bleue", "Rouge"], r: 2 } },
+            { id: 18, semaine: 4, titre: "Écriture", objectif: "Éviter les pièges d'orthographe courants.", explication: "Fais attention aux lettres muettes à la fin des mots, comme le 't' dans petit ou le 's' dans les souris.", vocabulaire: ["Orthographe", "Lettre muette", "Dictée"], exemples: "Exemple: Un grand garçon (le d ne se prononce pas).", quiz: { q: "Quel mot est correctement orthographié ?", options: ["Un unfort", "Un enfant", "Un anfan"], r: 1 } },
+            { id: 19, semaine: 4, titre: "Lecture avec audio", objectif: "Écouter l'intonation et répéter.", explication: "La synthèse vocale intégrée va lire le texte. Écoute bien comment la voix monte et descend.", vocabulaire: ["Écouter", "Intonation", "Répéter"], exemples: "Exemple: Clique sur le bouton pour écouter la phrase lue à haute voix.", quiz: { q: "À quoi sert le point d'interrogation (?)", options: ["À exprimer la surprise", "À poser une question", "À finir une phrase simple"], r: 1 } },
+            { id: 20, semaine: 4, titre: "Évaluation finale", objectif: "Valider tout ton parcours du premier mois.", explication: "C'est l'examen final Yahya ! Si tu réussis ce quiz, tu obtiendras immédiatement ton certificat d'excellence.", vocabulaire: ["Examen", "Réussite", "Certificat", "Félicitations"], exemples: "Exemple: Je donne le meilleur de moi-même pour ce dernier test.", quiz: { q: "Quelle proposition résume ton but ?", options: ["J'abandonne", "Je passe en 6ème année avec succès !", "Je ne sais pas"], r: 1 } }
+        ];
+
+        function renderSidebar() {
+            const sidebar = document.getElementById('lessons-sidebar');
+            sidebar.innerHTML = '<h3>📍 Ton Parcours</h3>';
+            
+            for(let w = 1; w <= 4; w++) {
+                const div = document.createElement('div');
+                div.className = 'week-section';
+                div.innerHTML = `<h4>Semaine ${w}</h4>`;
+                
+                const leconsSemaine = dbLecons.filter(l => l.semaine === w);
+                leconsSemaine.forEach(l => {
+                    const btn = document.createElement('button');
+                    btn.className = `lesson-nav-btn ${state.completedLessons.includes(l.id) ? 'completed' : ''}`;
+                    btn.id = `nav-l-${l.id}`;
+                    btn.innerText = `Lec ${l.id} : ${l.titre}`;
+                    btn.onclick = () => loadLesson(l.id);
+                    div.appendChild(btn);
+                });
+                sidebar.appendChild(div);
+            }
+        }
+
+        function loadLesson(id) {
+            // Update active state in sidebar
+            document.querySelectorAll('.lesson-nav-btn').forEach(b => b.classList.remove('active'));
+            const activeBtn = document.getElementById(`nav-l-${id}`);
+            if(activeBtn) activeBtn.classList.add('active');
+
+            const l = dbLecons.find(item => item.id === id);
+            const area = document.getElementById('lesson-content-area');
+
+            let audioBtnHTML = '';
+            if(l.id === 19) {
+                audioBtnHTML = `<button class="btn btn-secondary" style="margin-top:10px;" onclick="lireTexte()">🔊 Écouter la phrase modèle</button>`;
+            }
+
+            area.innerHTML = `
+                <h2>Leçon ${l.id} : ${l.titre}</h2>
+                <p><strong>🎯 Objectif :</strong> ${l.objectif}</p>
+                <div class="content-box">
+                    <h3>📖 Explication</h3>
+                    <p>${l.explication}</p>
+                    ${audioBtnHTML}
+                </div>
+                <div class="content-box" style="border-left-color: var(--primary-color);">
+                    <h3>💡 Vocabulaire & Exemples</h3>
+                    <ul>
+                        ${l.vocabulaire.map(v => `<li>${v}</li>`).join('')}
+                    </ul>
+                    <p style="margin-top:10px;"><em>${l.exemples}</em></p>
+                </div>
+                <div class="quiz-box">
+                    <h3>⚡ Mini Quiz</h3>
+                    <p id="quiz-question">${l.quiz.q}</p>
+                    <div id="quiz-options-container">
+                        ${l.quiz.options.map((opt, index) => `
+                            <button class="quiz-option" onclick="checkQuizAnswer(${l.id}, ${index}, ${l.quiz.r})">${opt}</button>
+                        `).join('')}
+                    </div>
+                    <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
+                </div>
+            `;
+        }
+
+        window.lireTexte = function() {
+            const msg = new SpeechSynthesisUtterance("Le petit oiseau chante sur la branche de l'arbre.");
+            msg.lang = "fr-FR";
+            window.speechSynthesis.speak(msg);
+        };
+
+        window.checkQuizAnswer = function(lessonId, chosenIdx, correctIdx) {
+            const feedback = document.getElementById('quiz-feedback');
+            if(chosenIdx === correctIdx) {
+                feedback.innerHTML = "🎉 Excellent travail Yahya ! C'est la bonne réponse. +5 Étoiles !";
+                feedback.style.color = "green";
+                
+                if(!state.completedLessons.includes(lessonId)) {
+                    state.completedLessons.push(lessonId);
+                    state.stars += 5;
+                    saveState();
+                    renderSidebar();
+                    // Relancer le focus active
+                    document.getElementById(`nav-l-${lessonId}`).classList.add('active');
+                }
+            } else {
+                feedback.innerHTML = "❌ Ce n'est pas tout à fait ça. Relis l'explication et réessaie !";
+                feedback.style.color = "red";
+            }
+        };
+
+        // Init page
+        const baseUpdate = updateUI;
+        updateUI = function() {
+            baseUpdate();
+            renderSidebar();
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSidebar();
+            if(dbLecons.length > 0) {
+                loadLesson(1);
+            }
+        });
+    </script>
+</body>
+</html>

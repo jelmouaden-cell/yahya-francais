@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Aventure de Yahya - Certificat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">🚀 L'Aventure de Yahya</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="lecons.html">Leçons</a>
+                <a href="jeux.html">Jeux</a>
+                <a href="certificat.html" class="active">Certificat</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="lock-screen" class="welcome-box" style="background: #e74c3c; text-align:center;">
+            <h2>🔒 Certificat Verrouillé</h2>
+            <p>Tu dois terminer les 20 leçons du programme pour pouvoir afficher et débloquer ton certificat officiel.</p>
+        </div>
+
+        <div id="certificate-container" style="display:none;">
+            <div class="certificate-wrapper" id="print-area">
+                <h2>CERTIFICAT DE RÉUSSITE</h2>
+                <p>Ce document d'excellence est fièrement décerné à :</p>
+                <div class="cert-name">Yahya Armich</div>
+                <p>Pour sa participation active, ses efforts constants et ses progrès remarquables en langue française durant les vacances d'été, en préparation de son entrée en 6ème année primaire.</p>
+                <br>
+                <p><strong>Date d'obtention :</strong> <span id="cert-date">--/--/----</span></p>
+                <div style="margin-top:30px; font-size:1.5rem;">⭐ 🏆 ⭐</div>
+            </div>
+
+            <div style="text-align:center; margin-top:20px; gap:15px; display:flex; justify-content:center;">
+                <button class="btn btn-primary" onclick="window.print()">Imprimer</button>
+                <button class="btn btn-success" onclick="downloadPDF()">Télécharger le PDF</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 - Plateforme d'été personnalisée pour Yahya Armich.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="certificat.js"></script>
+</body>
+</html>
