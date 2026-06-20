@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Aventure de Yahya - Jeux Éducatifs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">🚀 L'Aventure de Yahya</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="lecons.html">Leçons</a>
+                <a href="jeux.html" class="active">Jeux</a>
+                <a href="certificat.html">Certificat</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 style="margin-bottom: 20px; text-align:center;">🎮 La Zone de Jeux de Yahya</h2>
+        
+        <div class="games-grid">
+            <div class="game-card" onclick="startMemoryGame()">
+                <h3>🧠 Jeu de Mémoire</h3>
+                <p>Retrouve les paires de mots identiques.</p>
+            </div>
+            <div class="game-card" onclick="startAnagramGame()">
+                <h3>🔤 Mots Mélangés</h3>
+                <p>Remets les lettres dans le bon ordre.</p>
+            </div>
+            <div class="game-card" onclick="startLightningQuiz()">
+                <h3>⚡ Quiz Rapide</h3>
+                <p>Réponds vite à 3 questions de français.</p>
+            </div>
+            <div class="game-card" onclick="startMatchGame()">
+                <h3>🤝 Correspondance</h3>
+                <p>Associe le bon mot à sa boîte.</p>
+            </div>
+        </div>
+
+        <section id="active-game-window" class="game-window">
+            <h3>Sélectionne un jeu ci-dessus pour t'amuser !</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Plateforme d'été personnalisée pour Yahya Armich.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="jeux.js"></script>
+</body>
+</html>
